@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { Application } from "../types/types";
 import { motion } from "framer-motion";
 
@@ -33,7 +33,7 @@ export default function ResultsCards({
     );
 
   const highlightText = (text: string) => {
-    let elements = [text];
+    let elements: (string | JSX.Element)[] = [text];
     highlightKeywords.forEach((kw) => {
       elements = elements.flatMap((el) =>
         typeof el === "string"
