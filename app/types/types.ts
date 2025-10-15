@@ -1,14 +1,14 @@
-export type Application = {
+export interface Application {
   id: string;
   title: string;
+  agency: string;
   naics: string;
   setAside: string[];
-  agency: string[];
   vehicle: string;
   dueDate: string;
-  status: "Draft" | "Submitted" | "Awarded" | "Ready" | "Lost";
+  status: string;
   percentComplete: number;
   fitScore: number;
   ceiling: number;
   keywords: string[];
-};
+}
