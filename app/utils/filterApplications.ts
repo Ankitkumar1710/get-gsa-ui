@@ -1,4 +1,4 @@
-import { Application } from "../types";
+import { Application } from "../types/types";
 
 export type Filters = {
   naics: string;

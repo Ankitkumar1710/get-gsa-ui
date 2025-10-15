@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Application } from "../../types";
+import { Application } from "../types/types";
 import { motion } from "framer-motion";
 
 type Props = {

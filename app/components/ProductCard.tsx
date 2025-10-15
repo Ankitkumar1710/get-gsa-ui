@@ -1,6 +1,6 @@
 "use client";
 
-import { Application } from "../types";
+import { Application } from "../types/types";
 import { CalendarDays, DollarSign, Tag } from "lucide-react";
 
 export default function ProductCard({ app }: { app: Application }) {

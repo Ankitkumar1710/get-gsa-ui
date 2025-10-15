@@ -6,14 +6,12 @@ import Dashboard from "./components/Dashboard";
 import ResultsCards from "./components/ResultsList";
 import ParameterPanel from "./components/ParameterPanel";
 import { Toaster, toast } from "react-hot-toast";
-import { Application } from "./types";
-import { Bell, User } from "lucide-react";
+import { Application } from "./types/types";
 import Header from "./components/Header";
 import SAMPLE_DATA from "../public/data/applications.json";
 
 export default function Page() {
   const router = useRouter();
-  const searchParams = useSearchParams();
 
   const [applications, setApplications] = useState<Application[]>(SAMPLE_DATA);
   const [results, setResults] = useState<Application[]>(applications);
@@ -86,7 +84,10 @@ export default function Page() {
   useEffect(() => {
     const params = new URLSearchParams();
     Object.entries(filters).forEach(([k, v]) => {
-      if (v && (Array.isArray(v) ? v.length : true)) params.set(k, Array.isArray(v) ? v.join(",") : v);
+      if (v && (Array.isArray(v) ? v.length : true)) {
+        const valueStr = Array.isArray(v) ? v.join(",") : String(v);
+        params.set(k, valueStr);
+      }
     });
     router.replace(`?${params.toString()}`);
   }, [filters]);

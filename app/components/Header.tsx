@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Bell, User } from "lucide-react";
 import ParameterPanel from "./ParameterPanel"; // Adjust path if needed
-import { Application } from "../../types";
 
 type HeaderProps = {
   filters: any;
