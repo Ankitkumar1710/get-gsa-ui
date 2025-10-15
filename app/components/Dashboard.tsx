@@ -1,6 +1,6 @@
 "use client";
 
-import { Application } from "../../types";
+import { Application } from "../types/types";
 
 type Props = {
   applications: Application[];
